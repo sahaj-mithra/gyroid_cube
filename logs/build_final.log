@@ -1,0 +1,13 @@
+== gyroid_final_core: a=8.0 w=0.9 skin=0.0
+   full-res: tris=3804392 watertight=True bodies_raw=3
+   decimate->600000: dV=-0.050% dA=+0.380% defects={'zero_area_faces': 0, 'open_edges': 0, 'non_manifold_edges': 0, 'self_intersections': 0} ACCEPT
+   file gyroid_final_core.stl: 30.0 MB, tris=600000, watertight=True, bodies=1, defects={'zero_area_faces': 0, 'open_edges': 0, 'non_manifold_edges': 0, 'self_intersections': 0}, V=20846 mm3, phi=0.326, mass=25.8 g
+== gyroid_final_test_article: a=8.0 w=0.9 skin=1.25
+   full-res: tris=3807000 watertight=True bodies_raw=1
+   decimate->600000: dV=-0.025% dA=+0.305% defects={'zero_area_faces': 0, 'open_edges': 0, 'non_manifold_edges': 0, 'self_intersections': 0} ACCEPT
+   file gyroid_final_test_article.stl: 30.0 MB, tris=600000, watertight=True, bodies=1, defects={'zero_area_faces': 0, 'open_edges': 0, 'non_manifold_edges': 0, 'self_intersections': 0}, V=26072 mm3, phi=0.407, mass=32.3 g
+== gyroid_reference_a10_w1.0: a=10.0 w=1.0 skin=0.0
+   full-res: tris=3061896 watertight=True bodies_raw=3
+   decimate->600000: dV=-0.059% dA=+0.181% defects={'zero_area_faces': 0, 'open_edges': 0, 'non_manifold_edges': 0, 'self_intersections': 0} ACCEPT
+   file gyroid_reference_a10_w1.0.stl: 30.0 MB, tris=600000, watertight=True, bodies=1, defects={'zero_area_faces': 0, 'open_edges': 0, 'non_manifold_edges': 0, 'self_intersections': 0}, V=18766 mm3, phi=0.293, mass=23.3 g
+wrote results/final_metrics.json

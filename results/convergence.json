@@ -1,0 +1,67 @@
+[
+  {
+    "pitch_mm": 0.5,
+    "seconds": 3.2,
+    "bodies_raw": 1,
+    "removed_fragment_volume_mm3": 0.0,
+    "solid_volume_mm3": 18342.51798313118,
+    "wetted_area_mm2": 48592.66418559149,
+    "mean_wall_thickness_mm": 0.75495008518467,
+    "triangles": 610976,
+    "watertight": true,
+    "vol_err_vs_finest_pct": -2.3927420091211737,
+    "area_err_vs_finest_pct": 1.7546305180006438
+  },
+  {
+    "pitch_mm": 0.4,
+    "seconds": 4.7,
+    "bodies_raw": 1,
+    "removed_fragment_volume_mm3": 0.0,
+    "solid_volume_mm3": 18580.903131575247,
+    "wetted_area_mm2": 48222.587611977506,
+    "mean_wall_thickness_mm": 0.7706306961827213,
+    "triangles": 925376,
+    "watertight": true,
+    "vol_err_vs_finest_pct": -1.1242073015759635,
+    "area_err_vs_finest_pct": 0.9796780505328284
+  },
+  {
+    "pitch_mm": 0.3,
+    "seconds": 8.8,
+    "bodies_raw": 14,
+    "removed_fragment_volume_mm3": 0.036275293736252934,
+    "solid_volume_mm3": 18696.792851758197,
+    "wetted_area_mm2": 47990.27662715854,
+    "mean_wall_thickness_mm": 0.7791908763942132,
+    "triangles": 1697984,
+    "watertight": true,
+    "vol_err_vs_finest_pct": -0.5075156441497253,
+    "area_err_vs_finest_pct": 0.4932112386856202
+  },
+  {
+    "pitch_mm": 0.2,
+    "seconds": 20.5,
+    "bodies_raw": 3,
+    "removed_fragment_volume_mm3": 0.006057333059288794,
+    "solid_volume_mm3": 18759.88703754304,
+    "wetted_area_mm2": 47845.73759834621,
+    "mean_wall_thickness_mm": 0.7841821645651242,
+    "triangles": 3816392,
+    "watertight": true,
+    "vol_err_vs_finest_pct": -0.17176836696076725,
+    "area_err_vs_finest_pct": 0.19054177779629367
+  },
+  {
+    "pitch_mm": 0.15,
+    "seconds": 37.0,
+    "bodies_raw": 30,
+    "removed_fragment_volume_mm3": 0.030962242435634835,
+    "solid_volume_mm3": 18792.16603425664,
+    "wetted_area_mm2": 47754.74485851072,
+    "mean_wall_thickness_mm": 0.7870282247317902,
+    "triangles": 6784430,
+    "watertight": true,
+    "vol_err_vs_finest_pct": 0.0,
+    "area_err_vs_finest_pct": 0.0
+  }
+]

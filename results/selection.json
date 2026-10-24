@@ -1,0 +1,162 @@
+{
+  "constraints": {
+    "min_measured_wall_p1_mm": 0.8,
+    "min_bottleneck_mm": 2.5,
+    "min_cells": 4,
+    "solid_fraction_range": [
+      0.15,
+      0.4
+    ]
+  },
+  "weights": {
+    "heat": 0.4,
+    "dp": 0.25,
+    "material": 0.2,
+    "structure": 0.15
+  },
+  "selection_rule": "best mean rank across all weight sets; ties -> worst-case rank, then baseline score",
+  "selected": {
+    "design": "a8.00_w0.9",
+    "cell_mm": 8.0,
+    "cells_across": 5,
+    "wall_mm": 0.9
+  },
+  "ranking": [
+    {
+      "design": "a8.00_w0.9",
+      "score": 0.5882806000829865,
+      "mean_rank": 1.6666666666666667,
+      "worst_rank": 3,
+      "pareto": true,
+      "solid_fraction": 0.32433937762697407,
+      "wall_p1_mm": 0.850411665018772,
+      "wall_median_mm": 0.8653323061113575,
+      "bottleneck_mm": 2.582068007491767,
+      "hydraulic_diameter_mm": 3.6336062200344164,
+      "wetted_area_mm2": 47602.60436967667,
+      "pla_mass_g": 25.73957300847666,
+      "est_UA_W_K": 0.3077126022063401,
+      "est_dP_Pa_lower_bound": 2.597073345713716
+    },
+    {
+      "design": "a8.00_w1.0",
+      "score": 0.55,
+      "mean_rank": 2.5,
+      "worst_rank": 4,
+      "pareto": true,
+      "solid_fraction": 0.35582690030129394,
+      "wall_p1_mm": 0.9260669522232181,
+      "wall_median_mm": 0.9533100230250388,
+      "bottleneck_mm": 2.5385369648431357,
+      "hydraulic_diameter_mm": 3.499426631011006,
+      "wetted_area_mm2": 47124.38090900215,
+      "pla_mass_g": 28.238422807910688,
+      "est_UA_W_K": 0.312432147696258,
+      "est_dP_Pa_lower_bound": 2.936920390466402
+    },
+    {
+      "design": "a10.00_w0.9",
+      "score": 0.45,
+      "mean_rank": 2.6666666666666665,
+      "worst_rank": 5,
+      "pareto": true,
+      "solid_fraction": 0.265166782074604,
+      "wall_p1_mm": 0.8660254037844388,
+      "wall_median_mm": 0.8774964387392123,
+      "bottleneck_mm": 3.46100470139681,
+      "hydraulic_diameter_mm": 4.86483236711933,
+      "wetted_area_mm2": 38668.81520118924,
+      "pla_mass_g": 21.04363582544057,
+      "est_UA_W_K": 0.19068118143848564,
+      "est_dP_Pa_lower_bound": 1.3321833593922654
+    },
+    {
+      "design": "a10.00_w1.0",
+      "score": 0.40993043654972244,
+      "mean_rank": 3.5,
+      "worst_rank": 4,
+      "pareto": true,
+      "solid_fraction": 0.2921879519597684,
+      "wall_p1_mm": 0.9643650760992956,
+      "wall_median_mm": 0.9848857801796105,
+      "bottleneck_mm": 3.3490826161976344,
+      "hydraulic_diameter_mm": 4.718601470573545,
+      "wetted_area_mm2": 38401.18421280332,
+      "pla_mass_g": 23.18803586752722,
+      "est_UA_W_K": 0.19320839311880533,
+      "est_dP_Pa_lower_bound": 1.4700902470165005
+    },
+    {
+      "design": "a10.00_w1.2",
+      "score": 0.33742433759118645,
+      "mean_rank": 4.666666666666667,
+      "worst_rank": 5,
+      "pareto": true,
+      "solid_fraction": 0.3439548107230384,
+      "wall_p1_mm": 1.1313708498984762,
+      "wall_median_mm": 1.1532562594670797,
+      "bottleneck_mm": 3.1731712060539197,
+      "hydraulic_diameter_mm": 4.4407953724830405,
+      "wetted_area_mm2": 37819.25406776747,
+      "pla_mass_g": 27.29625377898033,
+      "est_UA_W_K": 0.19848876020677061,
+      "est_dP_Pa_lower_bound": 1.7907430148594214
+    }
+  ],
+  "sensitivity": [
+    {
+      "weights": "baseline",
+      "heat": 0.4,
+      "dp": 0.25,
+      "material": 0.2,
+      "structure": 0.15,
+      "winner": "a8.00_w0.9",
+      "runner_up": "a8.00_w1.0"
+    },
+    {
+      "weights": "heat_first",
+      "heat": 0.55,
+      "dp": 0.2,
+      "material": 0.15,
+      "structure": 0.1,
+      "winner": "a8.00_w0.9",
+      "runner_up": "a8.00_w1.0"
+    },
+    {
+      "weights": "low_dp",
+      "heat": 0.3,
+      "dp": 0.4,
+      "material": 0.15,
+      "structure": 0.15,
+      "winner": "a10.00_w0.9",
+      "runner_up": "a10.00_w1.0"
+    },
+    {
+      "weights": "light",
+      "heat": 0.3,
+      "dp": 0.2,
+      "material": 0.35,
+      "structure": 0.15,
+      "winner": "a10.00_w0.9",
+      "runner_up": "a8.00_w0.9"
+    },
+    {
+      "weights": "strong",
+      "heat": 0.3,
+      "dp": 0.2,
+      "material": 0.15,
+      "structure": 0.35,
+      "winner": "a8.00_w1.0",
+      "runner_up": "a8.00_w0.9"
+    },
+    {
+      "weights": "equal",
+      "heat": 0.25,
+      "dp": 0.25,
+      "material": 0.25,
+      "structure": 0.25,
+      "winner": "a8.00_w0.9",
+      "runner_up": "a8.00_w1.0"
+    }
+  ]
+}

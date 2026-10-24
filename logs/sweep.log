@@ -1,0 +1,47 @@
+ a13.33_w0.8  phi=0.181  wall p1=0.777  bottleneck=5.00  Dh=7.12  mass=14.3 g  wt=True  (15.9s)
+ a13.33_w0.9  phi=0.202  wall p1=0.854  bottleneck=4.87  Dh=6.95  mass=16.1 g  wt=True  (16.0s)
+ a13.33_w1.0  phi=0.224  wall p1=0.933  bottleneck=4.77  Dh=6.79  mass=17.8 g  wt=True  (15.8s)
+ a13.33_w1.2  phi=0.266  wall p1=1.155  bottleneck=4.61  Dh=6.48  mass=21.1 g  wt=True  (16.2s)
+ a13.33_w1.6  phi=0.344  wall p1=1.508  bottleneck=4.23  Dh=5.92  mass=27.3 g  wt=True  (16.3s)
+ a13.33_w2.0  phi=0.416  wall p1=1.848  bottleneck=3.93  Dh=5.42  mass=33.0 g  wt=True  (15.6s)
+ a10.00_w0.8  phi=0.237  wall p1=0.755  bottleneck=3.53  Dh=5.02  mass=18.8 g  wt=True  (17.5s)
+ a10.00_w0.9  phi=0.265  wall p1=0.866  bottleneck=3.46  Dh=4.86  mass=21.0 g  wt=True  (18.3s)
+ a10.00_w1.0  phi=0.292  wall p1=0.964  bottleneck=3.35  Dh=4.72  mass=23.2 g  wt=True  (20.7s)
+ a10.00_w1.2  phi=0.344  wall p1=1.131  bottleneck=3.17  Dh=4.44  mass=27.3 g  wt=True  (20.6s)
+ a10.00_w1.6  phi=0.438  wall p1=1.446  bottleneck=2.89  Dh=3.95  mass=34.7 g  wt=True  (19.0s)
+ a10.00_w2.0  phi=0.518  wall p1=1.732  bottleneck=2.60  Dh=3.53  mass=41.1 g  wt=True  (20.2s)
+  a8.00_w0.8  phi=0.292  wall p1=0.771  bottleneck=2.68  Dh=3.77  mass=23.1 g  wt=True  (20.3s)
+  a8.00_w0.9  phi=0.324  wall p1=0.850  bottleneck=2.58  Dh=3.63  mass=25.7 g  wt=True  (20.0s)
+  a8.00_w1.0  phi=0.356  wall p1=0.926  bottleneck=2.54  Dh=3.50  mass=28.2 g  wt=True  (21.0s)
+  a8.00_w1.2  phi=0.415  wall p1=1.109  bottleneck=2.35  Dh=3.25  mass=32.9 g  wt=True  (21.1s)
+  a8.00_w1.6  phi=0.518  wall p1=1.386  bottleneck=2.07  Dh=2.82  mass=41.1 g  wt=True  (20.6s)
+  a8.00_w2.0  phi=0.601  wall p1=1.618  bottleneck=1.84  Dh=2.48  mass=47.7 g  wt=True  (20.0s)
+  a6.67_w0.8  phi=0.343  wall p1=0.740  bottleneck=2.11  Dh=2.96  mass=27.2 g  wt=True  (18.2s)
+  a6.67_w0.9  phi=0.379  wall p1=0.830  bottleneck=2.03  Dh=2.83  mass=30.1 g  wt=True  (18.9s)
+  a6.67_w1.0  phi=0.414  wall p1=0.921  bottleneck=1.93  Dh=2.71  mass=32.9 g  wt=True  (17.4s)
+  a6.67_w1.2  phi=0.478  wall p1=1.062  bottleneck=1.79  Dh=2.49  mass=38.0 g  wt=True  (15.7s)
+  a6.67_w1.6  phi=0.585  wall p1=1.331  bottleneck=1.56  Dh=2.12  mass=46.4 g  wt=True  (16.0s)
+  a6.67_w2.0  phi=0.667  wall p1=1.521  bottleneck=1.34  Dh=1.83  mass=52.9 g  wt=True  (15.9s)
+  a5.00_w0.8  phi=0.435  wall p1=0.729  bottleneck=1.43  Dh=1.97  mass=34.5 g  wt=True  (17.8s)
+  a5.00_w0.9  phi=0.477  wall p1=0.788  bottleneck=1.34  Dh=1.86  mass=37.9 g  wt=True  (15.5s)
+  a5.00_w1.0  phi=0.516  wall p1=0.880  bottleneck=1.29  Dh=1.76  mass=40.9 g  wt=True  (15.6s)
+  a5.00_w1.2  phi=0.584  wall p1=0.970  bottleneck=1.15  Dh=1.58  mass=46.3 g  wt=True  (16.2s)
+  a5.00_w1.6  phi=0.688  wall p1=1.203  bottleneck=0.97  Dh=1.31  mass=54.6 g  wt=True  (13.8s)
+  a5.00_w2.0  phi=0.761  wall p1=1.341  bottleneck=0.82  Dh=1.10  mass=60.4 g  wt=True  (13.4s)
+
+Feasible ranking:
+    a8.00_w0.9 score=0.588 mean_rank=1.67 worst=3 pareto=True
+    a8.00_w1.0 score=0.550 mean_rank=2.50 worst=4 pareto=True
+   a10.00_w0.9 score=0.450 mean_rank=2.67 worst=5 pareto=True
+   a10.00_w1.0 score=0.410 mean_rank=3.50 worst=4 pareto=True
+   a10.00_w1.2 score=0.337 mean_rank=4.67 worst=5 pareto=True
+
+Sensitivity:
+    baseline: winner a8.00_w0.9, runner-up a8.00_w1.0
+  heat_first: winner a8.00_w0.9, runner-up a8.00_w1.0
+      low_dp: winner a10.00_w0.9, runner-up a10.00_w1.0
+       light: winner a10.00_w0.9, runner-up a8.00_w0.9
+      strong: winner a8.00_w1.0, runner-up a8.00_w0.9
+       equal: winner a8.00_w0.9, runner-up a8.00_w1.0
+
+SELECTED: a8.00_w0.9

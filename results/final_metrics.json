@@ -1,0 +1,303 @@
+{
+  "selected": {
+    "design": "a8.00_w0.9",
+    "cell_mm": 8.0,
+    "cells_across": 5,
+    "wall_mm": 0.9
+  },
+  "pitch_mm": 0.2,
+  "skin_mm": 1.25,
+  "parts": {
+    "gyroid_final_core": {
+      "cell_mm": 8.0,
+      "wall_nominal_mm": 0.9,
+      "skin_mm": 0.0,
+      "file": "D:\\Academics\\Semester 5\\ME3305 - Manufacturing Technology II\\Project\\stl\\gyroid_final_core.stl",
+      "mesh_build": {
+        "bodies_raw": 3,
+        "removed_fragment_volume_mm3": 0.012854830150899943
+      },
+      "lattice_measured": {
+        "wall_min_mm": 0.8390470785361213,
+        "wall_p1_mm": 0.850411665018772,
+        "wall_p5_mm": 0.854166260162505,
+        "wall_median_mm": 0.8653323061113575,
+        "wall_max_mm": 0.8836288813749809,
+        "bottleneck_mm": 2.582068007491767,
+        "stats_voxel_mm": 0.04
+      },
+      "full_res_measured": {
+        "solid_volume_mm3": 20856.97203038225,
+        "box_volume_mm3": 64000.0,
+        "solid_fraction": 0.3258901879747227,
+        "porosity": 0.6741098120252773,
+        "surface_area_total_mm2": 49291.99758552374,
+        "wetted_area_mm2": 47421.56776757281,
+        "wall_area_one_side_mm2": 23710.783883786404,
+        "specific_surface_m2_per_m3": 740.9619963683251,
+        "hydraulic_diameter_mm": 3.6391060018154224,
+        "mean_wall_thickness_mm": 0.8796407631484673,
+        "wall_thickness_target_mm": 0.9,
+        "pla_mass_g": 25.86264531767399,
+        "overhang_gt45_area_frac": 0.11602455001668478,
+        "overhang_gt70_area_frac": 0.017111439775395188,
+        "bed_contact_area_mm2": 311.47162516267133,
+        "triangles": 3804392,
+        "watertight": true,
+        "winding_consistent": true,
+        "is_volume": true,
+        "euler_number": -1942
+      },
+      "decimation": {
+        "face_budget": 600000,
+        "vol_change_pct": -0.05026300650244897,
+        "area_change_pct": 0.38048310620544257
+      },
+      "exported_file_measured": {
+        "solid_volume_mm3": 20846.488689174406,
+        "box_volume_mm3": 64000.0,
+        "solid_fraction": 0.3257263857683501,
+        "porosity": 0.6742736142316499,
+        "surface_area_total_mm2": 49490.78534045323,
+        "wetted_area_mm2": 47601.998821626185,
+        "wall_area_one_side_mm2": 23800.999410813092,
+        "specific_surface_m2_per_m3": 743.7812315879091,
+        "hydraulic_diameter_mm": 3.6261932170142743,
+        "mean_wall_thickness_mm": 0.8758661066855699,
+        "wall_thickness_target_mm": 0.9,
+        "pla_mass_g": 25.849645974576266,
+        "overhang_gt45_area_frac": 0.11563906776954795,
+        "overhang_gt70_area_frac": 0.017679419713894466,
+        "bed_contact_area_mm2": 313.7057999129513,
+        "triangles": 600000,
+        "watertight": true,
+        "winding_consistent": true,
+        "is_volume": true,
+        "euler_number": -1942,
+        "bodies": 1,
+        "bbox_mm": [
+          [
+            -0.015948889777064323,
+            -0.015948880463838577,
+            -0.027822451665997505
+          ],
+          [
+            40.01142883300781,
+            40.016136169433594,
+            40.0305061340332
+          ]
+        ],
+        "file_bytes": 30000084,
+        "defects": {
+          "zero_area_faces": 0,
+          "open_edges": 0,
+          "non_manifold_edges": 0,
+          "self_intersections": 0
+        }
+      },
+      "estimates_UNVERIFIED": {
+        "est_h_W_m2K": 28.248696231634003,
+        "est_U_W_m2K": 12.910533998887066,
+        "est_UA_W_K": 0.30611888147188787,
+        "est_wall_resistance_share": 0.08593770891066178,
+        "est_Re": 359.09715932857887,
+        "est_dP_Pa_lower_bound": 2.5951859641043096,
+        "est_rel_stiffness": 0.18604025543862976
+      }
+    },
+    "gyroid_final_test_article": {
+      "cell_mm": 8.0,
+      "wall_nominal_mm": 0.9,
+      "skin_mm": 1.25,
+      "file": "D:\\Academics\\Semester 5\\ME3305 - Manufacturing Technology II\\Project\\stl\\gyroid_final_test_article.stl",
+      "mesh_build": {
+        "bodies_raw": 1,
+        "removed_fragment_volume_mm3": 0.0
+      },
+      "lattice_measured": {
+        "wall_min_mm": 0.8390470785361213,
+        "wall_p1_mm": 0.850411665018772,
+        "wall_p5_mm": 0.854166260162505,
+        "wall_median_mm": 0.8653323061113575,
+        "wall_max_mm": 0.8836288813749809,
+        "bottleneck_mm": 2.582068007491767,
+        "stats_voxel_mm": 0.04
+      },
+      "full_res_measured": {
+        "solid_volume_mm3": 26078.98250120397,
+        "box_volume_mm3": 64000.0,
+        "solid_fraction": 0.40748410158131204,
+        "porosity": 0.592515898418688,
+        "surface_area_total_mm2": 52285.690570627754,
+        "wetted_area_mm2": 45162.20884131593,
+        "wall_area_one_side_mm2": 22581.104420657965,
+        "specific_surface_m2_per_m3": 705.6595131455614,
+        "hydraulic_diameter_mm": 3.3586503824059726,
+        "mean_wall_thickness_mm": 1.1549028787691193,
+        "wall_thickness_target_mm": 0.9,
+        "pla_mass_g": 32.337938301492926,
+        "overhang_gt45_area_frac": 0.10670890360926112,
+        "overhang_gt70_area_frac": 0.016207790311752557,
+        "bed_contact_area_mm2": 425.42097757076635,
+        "triangles": 3807000,
+        "watertight": true,
+        "winding_consistent": true,
+        "is_volume": true,
+        "euler_number": -1618
+      },
+      "decimation": {
+        "face_budget": 600000,
+        "vol_change_pct": -0.02535508498079375,
+        "area_change_pct": 0.30504878117958434
+      },
+      "exported_file_measured": {
+        "solid_volume_mm3": 26072.370153028663,
+        "box_volume_mm3": 64000.0,
+        "solid_fraction": 0.4073807836410729,
+        "porosity": 0.5926192163589271,
+        "surface_area_total_mm2": 52427.14755376561,
+        "wetted_area_mm2": 45299.97560894014,
+        "wall_area_one_side_mm2": 22649.98780447007,
+        "specific_surface_m2_per_m3": 707.8121188896897,
+        "hydraulic_diameter_mm": 3.34901989125894,
+        "mean_wall_thickness_mm": 1.1510986397919019,
+        "wall_thickness_target_mm": 0.9,
+        "pla_mass_g": 32.32973898975554,
+        "overhang_gt45_area_frac": 0.10591177800584795,
+        "overhang_gt70_area_frac": 0.016514478005844418,
+        "bed_contact_area_mm2": 427.1563681377272,
+        "triangles": 600000,
+        "watertight": true,
+        "winding_consistent": true,
+        "is_volume": true,
+        "euler_number": -1618,
+        "bodies": 1,
+        "bbox_mm": [
+          [
+            0.00019979476928710938,
+            0.00019979476928710938,
+            -0.0004743712779600173
+          ],
+          [
+            39.99980163574219,
+            39.99980163574219,
+            40.00165557861328
+          ]
+        ],
+        "file_bytes": 30000084,
+        "defects": {
+          "zero_area_faces": 0,
+          "open_edges": 0,
+          "non_manifold_edges": 0,
+          "self_intersections": 0
+        }
+      },
+      "estimates_UNVERIFIED": {
+        "est_h_W_m2K": 30.60753228097505,
+        "est_U_W_m2K": 13.88892843211192,
+        "est_UA_W_K": 0.31362734321656455,
+        "est_wall_resistance_share": 0.09245029591980776,
+        "est_Re": 377.0619443366204,
+        "est_dP_Pa_lower_bound": 3.4662424749645813,
+        "est_rel_stiffness": 0.2601153630384603
+      }
+    },
+    "gyroid_reference_a10_w1.0": {
+      "cell_mm": 10.0,
+      "wall_nominal_mm": 1.0,
+      "skin_mm": 0.0,
+      "file": "D:\\Academics\\Semester 5\\ME3305 - Manufacturing Technology II\\Project\\stl\\gyroid_reference_a10_w1.0.stl",
+      "mesh_build": {
+        "bodies_raw": 3,
+        "removed_fragment_volume_mm3": 0.05917945335750119
+      },
+      "lattice_measured": {
+        "wall_min_mm": 0.9643650760992956,
+        "wall_p1_mm": 0.9643650760992956,
+        "wall_p5_mm": 0.9643650760992956,
+        "wall_median_mm": 0.9848857801796105,
+        "wall_max_mm": 1.0,
+        "bottleneck_mm": 3.3490826161976344,
+        "stats_voxel_mm": 0.05
+      },
+      "full_res_measured": {
+        "solid_volume_mm3": 18777.145787712736,
+        "box_volume_mm3": 64000.0,
+        "solid_fraction": 0.2933929029330115,
+        "porosity": 0.7066070970669884,
+        "surface_area_total_mm2": 40065.77975126097,
+        "wetted_area_mm2": 38242.470168018925,
+        "wall_area_one_side_mm2": 19121.235084009462,
+        "specific_surface_m2_per_m3": 597.5385963752957,
+        "hydraulic_diameter_mm": 4.730118531946279,
+        "mean_wall_thickness_mm": 0.9820048603144638,
+        "wall_thickness_target_mm": 1.0,
+        "pla_mass_g": 23.283660776763792,
+        "overhang_gt45_area_frac": 0.11635522241195034,
+        "overhang_gt70_area_frac": 0.01707664421758394,
+        "bed_contact_area_mm2": 303.67159670168274,
+        "triangles": 3061896,
+        "watertight": true,
+        "winding_consistent": true,
+        "is_volume": true,
+        "euler_number": -978
+      },
+      "decimation": {
+        "face_budget": 600000,
+        "vol_change_pct": -0.059318441235656216,
+        "area_change_pct": 0.18138885183187625
+      },
+      "exported_file_measured": {
+        "solid_volume_mm3": 18766.00747752292,
+        "box_volume_mm3": 64000.0,
+        "solid_fraction": 0.2932188668362956,
+        "porosity": 0.7067811331637044,
+        "surface_area_total_mm2": 40147.14090055403,
+        "wetted_area_mm2": 38311.837745568846,
+        "wall_area_one_side_mm2": 19155.918872784423,
+        "specific_surface_m2_per_m3": 598.6224647745132,
+        "hydraulic_diameter_mm": 4.722717069630401,
+        "mean_wall_thickness_mm": 0.9796453828265337,
+        "wall_thickness_target_mm": 1.0,
+        "pla_mass_g": 23.26984927212842,
+        "overhang_gt45_area_frac": 0.11737157255765052,
+        "overhang_gt70_area_frac": 0.016617207173316,
+        "bed_contact_area_mm2": 305.58412944079095,
+        "triangles": 600000,
+        "watertight": true,
+        "winding_consistent": true,
+        "is_volume": true,
+        "euler_number": -978,
+        "bodies": 1,
+        "bbox_mm": [
+          [
+            -0.002501778770238161,
+            -0.0015773532213643193,
+            -0.0005585430189967155
+          ],
+          [
+            40.00157928466797,
+            40.000953674316406,
+            40.00102996826172
+          ]
+        ],
+        "file_bytes": 30000084,
+        "defects": {
+          "zero_area_faces": 0,
+          "open_edges": 0,
+          "non_manifold_edges": 0,
+          "self_intersections": 0
+        }
+      },
+      "estimates_UNVERIFIED": {
+        "est_h_W_m2K": 21.733070599755433,
+        "est_U_W_m2K": 10.039989596285933,
+        "est_UA_W_K": 0.1919770013115926,
+        "est_wall_resistance_share": 0.07606340758871727,
+        "est_Re": 445.2889732652237,
+        "est_dP_Pa_lower_bound": 1.4654348036696654,
+        "est_rel_stiffness": 0.1589184813857661
+      }
+    }
+  }
+}
