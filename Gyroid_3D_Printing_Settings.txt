@@ -1,0 +1,108 @@
+GYROID 3x3 CUBE - BAMBU LAB PRINT SETTINGS AND OPERATOR SHEET
+=============================================================
+Part      : stl/gyroid_3x3_40mm.stl (40 x 40 x 40 mm, 3 x 3 openings per face, wall 1.6 mm nominal)
+           SHA-256 f67f57ffb741b91a5489f2bd78cb285a91dc4f26cf6f33e192d2a481d2217d7e
+Printers  : Bambu Lab H2D (with AMS 2 Pro)  and  Bambu Lab P1S (with AMS)
+Material  : PLA (verified with the Bambu PLA Basic profile)
+Prepared  : 2026-10-29
+
+HOW THESE SETTINGS WERE CHECKED
+- [V] VERIFIED = sliced with Bambu Studio 02.08.02.61 (official Windows release, profile library
+  02.08.00.05) using Bambu's own printer, process and filament profiles. The values were read back
+  from the sliced file and its G-code: every setting matches the official profiles (only exception:
+  pre-start fan time on the H2D, 2 s instead of 0 s - no effect on the part). The toolpaths were
+  then checked: all 9 openings on each of X, Y and Z stay open (smallest 4.8 mm clear), 0 support,
+  0 % sparse infill.
+- [R] RECOMMENDATION = good practice that slicing cannot verify (plate preparation, operator checks).
+- Not done: no physical print yet, and the slicing was run from the command line, not the Bambu
+  Studio window. Repeat the preview check in Bambu Studio before printing (checklist below).
+- One configuration is enough for both printers. Apply the SAME 3 changes on top of each
+  printer's OWN Bambu profiles (they keep each machine's start/end G-code, speeds, fan and
+  retraction). Do not copy machine or speed values from one printer to the other.
+
+1. PROFILES TO SELECT IN BAMBU STUDIO                                              [V]
+                     H2D                                  P1S
+Printer              Bambu Lab H2D 0.4 nozzle             Bambu Lab P1S 0.4 nozzle
+Process (base)       0.20mm Standard @BBL H2D             0.20mm Standard @BBL X1C
+                                                          (the Bambu 0.20 mm preset listed for the P1S)
+Filament             Bambu PLA Basic @BBL H2D             Bambu PLA Basic @BBL P1S 0.4 nozzle
+Nozzle               0.4 mm, Standard flow (both nozzles) 0.4 mm
+Build plate          Textured PEI Plate                   Textured PEI Plate
+Other PLA brands: choose that brand's Bambu PLA profile; the temperatures below are for Bambu PLA Basic.
+
+2. THE ONLY 3 CHANGES FROM THE BAMBU DEFAULT PROCESS                               [V]
+- Quality > Wall generator : Arachne   (default Classic: walls left ~12 % gap fill and took ~7 min longer)
+- Strength > Wall loops    : 3         (default 2: about 11 % internal solid fill; 3 = 95 % wall paths)
+- Others > Brim type       : No-brim   (Auto brim gives the same result: no brim)
+  DO NOT use an outer brim: the preview shows a 5 mm brim runs into the bottom openings and
+  covers 84 % of the open bottom area. The PDF report (revision 3.1) has been corrected to match:
+  no brim (PrusaSlicer measured 86 % coverage for the same 5 mm brim).
+Everything else stays at the Bambu profile defaults listed below.
+
+3. RESULTING SETTINGS (read back from the sliced files)                             [V]
+                              H2D                          P1S
+Layer height / first layer    0.20 / 0.20 mm               same
+Line width                    0.42 default, 0.42 outer wall, 0.45 inner wall, 0.50 first layer (both)
+Wall loops / generator        3 / Arachne                  same
+Sparse infill                 15 % grid (default) - Bambu generates NO sparse infill on this part.
+                              100 % infill was also sliced: identical toolpaths and time, so 100 % is
+                              NOT needed. The part prints as walls (95 %) plus small solid patches
+                              where walls meet (4 %).
+Top / bottom shell layers     5 / 3 (default)              same
+Nozzle temperature            220 C (first layer 220 C)    220 C (220 C)
+Bed (Textured PEI)            55 C (first layer 55 C)      55 C (55 C)
+Outer / inner wall speed      200 / 300 mm/s               200 / 300 mm/s
+First layer speed             50 mm/s                      50 mm/s
+Overhang slow-down            on (50 / 30 / 10 mm/s)       on (50 / 30 / 10 mm/s)
+Travel / default accel.       1000 mm/s / 8000 mm/s2       500 mm/s / 10000 mm/s2
+Max volumetric speed          25 mm3/s                     21 mm3/s
+Part-cooling fan              60-80 %, overhangs 100 %     100 %, overhangs 100 %
+                              (off for the first layer; slow down if layer time < 4 s; both printers)
+Retraction                    0.4 mm @ 30 mm/s         0.8 mm @ 30 mm/s
+                              (PLA profile overrides   (printer value)
+                              the printer's 0.8 mm)
+Z-hop                         0.4 mm, Spiral Lift,     0.4 mm, Auto Lift
+                              1 mm wipe
+Supports                      OFF (enable support = off) - 0 mm support generated
+Elephant-foot compensation    0.15 mm (default; keeps the bottom openings at full size)
+XY hole / contour compensation 0 / 0 (do not change: it would change the opening sizes)
+Seam                          Aligned (default)
+
+4. ORIENTATION AND PLACEMENT                                                          [V]
+- Import the STL as is: it sits flat on the plate, Z up, 40 x 40 mm footprint (verified height 40 mm).
+- [R] Do NOT use auto-orient. Any rotation must keep a flat face on the plate.
+- One single, continuous first layer (329 mm2) - no floating parts, no supports needed.
+
+5. ESTIMATES FROM BAMBU STUDIO (final settings, 0.4 mm nozzle, no brim)              [V]
+  H2D : 43 min 10 s, 14.21 g PLA
+  P1S : 41 min 43 s, 14.21 g PLA
+  These Bambu estimates REPLACE the generic PrusaSlicer estimate in the PDF report (rev 3.1, no
+  brim: 1 h 54 min 53 s, 14.39 g), which uses a generic slow printer profile and is not valid for
+  Bambu printers.
+
+6. 0.6 mm NOZZLE?                                                                        [V] / [R]
+  Sliced with the Bambu 0.6 mm profiles (0.30 mm layers, 2 walls, Arachne): openings still fine
+  (smallest 4.74 mm). Times include a 5 mm brim (H2D 27 min 38 s, P1S 31 min 17 s); without the
+  brim, subtract roughly 1.5 min. [R] Stay with 0.4 mm: the 0.30 mm layers leave visible steps
+  on the curved surfaces, and saving 10-15 minutes on a 40-minute print is not worth it.
+
+7. H2D-SPECIFIC                                                                         [R]
+- Feed the PLA to the nozzle that your AMS 2 Pro is connected to. In the filament grouping
+  dialog, set the mapping to manual if needed. (The test slice used extruder 1; time and
+  toolpaths do not depend on which nozzle is used.)
+- In the printer settings, set the nozzle flow type to match the nozzle actually fitted
+  (verified slice: Standard 0.4 on both). For a High Flow nozzle, select High Flow and re-slice.
+
+8. PRE-PRINT CHECKLIST
+ [ ] Correct printer profile, 0.4 mm nozzle and Textured PEI Plate selected (section 1)
+ [ ] Filament profile = Bambu PLA Basic (or your PLA's own profile); AMS slot mapped to that filament
+ [ ] Wall generator Arachne, Wall loops 3, Brim type No-brim, Supports OFF (section 2)
+ [ ] Plate: wash the textured PEI with dish soap and water (or wipe with IPA), dry it, no
+     fingerprints [R]. If the corners lift on a first try, add a thin layer of glue stick [R]
+ [ ] PLA dry and loaded [R]; bed leveling ON in the print dialog [R]
+ [ ] Preview, layer 1: one continuous outline, NO brim lines inside the 40 x 40 mm square
+ [ ] Preview, all layers: no support, no sparse infill; walls of 3 lines each side
+ [ ] Preview, top view: 9 openings clear (3 x 3); the estimate is about 42-44 min / about 14 g
+ [ ] Watch the first layer: all strips stuck down, no curling at the thin ends
+ [ ] After printing: let the plate cool, flex it to release the part; look through each of the
+     6 faces - 9 clear openings on every face; remove any strings across the openings with tweezers

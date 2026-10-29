@@ -27,7 +27,8 @@ files = ["stl/gyroid_3x3_40mm.stl", "src/build_3x3.py", "src/gyroid.py", "src/me
          "src/printability.py", "src/slice_check.py", "src/render_views.py", "src/make_report.py",
          "print/prusaslicer_PLA_0.4mm_gyroid_3x3.ini", "results/3x3/validation.json",
          "results/3x3/design_study.json", "results/3x3/original_comparison.json",
-         "results/3x3/slicer/slicer_report.json", "Gyroid_Design_and_3D_Printing_Report.pdf"]
+         "results/3x3/slicer/slicer_report.json", "Gyroid_Design_and_3D_Printing_Report.pdf",
+         "Gyroid_3D_Printing_Settings.txt"]
 views = ["view_front", "view_side", "view_top", "view_iso", "views_composite", "openings_annotated",
          "before_after_front", "sections_mid", "slicer_layers"]
 print("Files:")
@@ -61,6 +62,9 @@ off = sl["cases"]["new_supports_off"]
 check(off["support_extrusion_mm"] == 0, f"supports OFF: {off['support_extrusion_mm']} mm support")
 check(all(off["openings_after_slicing"][ax]["full"] == 9 for ax in "xyz"),
       f"openings after slicing {[off['openings_after_slicing'][ax]['full'] for ax in 'xyz']}")
+check(off["brim_inside_footprint_mm2"] == 0, f"no brim inside the footprint ({off['brim_inside_footprint_mm2']} mm2)")
+check("brim_type = no_brim" in (ROOT / "print/prusaslicer_PLA_0.4mm_gyroid_3x3.ini").read_text(),
+      "PrusaSlicer profile has no brim")
 
 print("PDF:")
 r = PdfReader(ROOT / "Gyroid_Design_and_3D_Printing_Report.pdf")
@@ -68,7 +72,8 @@ text = "".join(pg.extract_text() for pg in r.pages)
 check(len(r.pages) >= 8, f"{len(r.pages)} pages")
 for s in ["Original design assessment", "Updated geometry", "Design changes", "3D-printability assessment",
           "Material selection", "Final slicer configuration", "Support-removal strategy", "Validation results",
-          "Final deliverables", "Final recommendations", "Pre-print checklist", "Not performed"]:
+          "Final deliverables", "Final recommendations", "Pre-print checklist", "Not performed",
+          "Why no brim", "Gyroid_3D_Printing_Settings.txt"]:
     check(s in text, f"PDF contains '{s}'")
 
 print("\nRESULT:", "ALL CHECKS PASSED" if not fails else f"{len(fails)} FAILURE(S)")

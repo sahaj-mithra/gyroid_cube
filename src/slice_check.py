@@ -35,6 +35,8 @@ L, PX, LH = 40.0, 0.05, 0.2
 CASES = {
     # name: (stl, extra CLI options)
     "new_supports_off": ("stl/gyroid_3x3_40mm.stl", []),
+    # the 5 mm outer brim recommended before revision 3.1, kept to document why it was dropped
+    "new_supports_off_brim5": ("stl/gyroid_3x3_40mm.stl", ["--brim-type", "outer_only", "--brim-width", "5"]),
     "new_supports_buildplate_only": ("stl/gyroid_3x3_40mm.stl",
                                      ["--support-material", "--support-material-buildplate-only"]),
     "new_supports_everywhere": ("stl/gyroid_3x3_40mm.stl",
@@ -208,6 +210,11 @@ def main(exe, estimates_only=False):
         n, nz = int((L + 1.0) / PX), int(round(L / LH))
         model = rasterize(segs, MODEL_TYPES, x0, y0, n, nz)
         support = rasterize(segs, SUPPORT_TYPES, x0, y0, n, nz)
+        brim = rasterize(segs, {"Skirt/Brim"}, x0, y0, n, nz)[0]
+        m0 = int(round(0.5 / PX))  # the 40 mm cube starts 0.5 mm into the raster window
+        cube = np.zeros((n, n), bool)
+        cube[m0:m0 + int(L / PX), m0:m0 + int(L / PX)] = True
+        bottom_open = cube & ~model[0]
         lengths = {}
         for s in segs:
             lengths[s[1]] = lengths.get(s[1], 0.0) + float(np.hypot(s[4] - s[2], s[5] - s[3]))
@@ -216,6 +223,9 @@ def main(exe, estimates_only=False):
                 "extrusion_length_mm_by_type": {k: round(v, 1) for k, v in sorted(lengths.items(), key=lambda t: -t[1])},
                 "support_extrusion_mm": round(sum(v for k, v in lengths.items() if k in SUPPORT_TYPES), 1),
                 "support_access": support_access(model, support),
+                # brim printed inside the cube's footprint, i.e. inside the bottom openings
+                "brim_inside_footprint_mm2": round(float((brim & cube).sum() * PX * PX), 1),
+                "brim_cover_of_bottom_openings_pct": round(100 * float((brim & bottom_open).sum() / bottom_open.sum()), 1),
                 "openings_after_slicing": see_through_counts(model)}
         report["cases"][name] = case
         np.savez_compressed(OUT / f"{name}_layers.npz", model=model, support=support)

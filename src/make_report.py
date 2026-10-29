@@ -118,6 +118,7 @@ def main():
     off, bpo, evw, osup = (sc["new_supports_off"], sc["new_supports_buildplate_only"],
                            sc["new_supports_everywhere"], sc["original_supports_everywhere"])
     n06 = sl["estimate_cases"]["new_supports_off_nozzle0.6"]
+    b5 = sc["new_supports_off_brim5"]
     ta, core = rev2["parts"]["gyroid_final_test_article"], rev2["parts"]["gyroid_final_core"]
     o_ta, o_core = orig["gyroid_final_test_article"]["see_through"], orig["gyroid_final_core"]["see_through"]
     sha = hashlib.sha256(STL.read_bytes()).hexdigest()
@@ -133,7 +134,8 @@ def main():
     # ------------------------------------------------------------------ title page
     story += [Spacer(1, 30 * mm), P("Gyroid Cube with 3 × 3 × 3 Openings", "title"),
               P("Design modification, validation and PLA 3D-printing report", "sub"), Spacer(1, 4 * mm),
-              P(f"ME3305 Manufacturing Technology II · {date(2026, 10, 29).strftime('%d %B %Y')}", "sub"),
+              P(f"ME3305 Manufacturing Technology II · {date(2026, 10, 29).strftime('%d %B %Y')} · "
+                f"revision 3.1 (brim advice corrected)", "sub"),
               Spacer(1, 14 * mm)]
     summary = [
         ["Item", "Result"],
@@ -150,6 +152,9 @@ def main():
          f"{o_ta['z']['min_clear_diameter_mm']:.1f} mm"],
         ["Mesh", "watertight, 1 body, 0 open/non-manifold edges, 0 self-intersections, 0 degenerate faces"],
         ["Supports", f"none needed: sliced with supports OFF, 0 mm support; PrusaSlicer estimate {t_off}, {g_off} g PLA"],
+        ["Adhesion", f"no brim: a 5 mm outer brim would fill {b5['brim_cover_of_bottom_openings_pct']:.0f} % of the "
+                     f"bottom openings (revision 3.1)"],
+        ["Bambu Lab H2D / P1S", "verified settings in Gyroid_3D_Printing_Settings.txt (Bambu Studio, official profiles)"],
         ["Not performed", "physical print, strength test, slicer GUI preview on your printer profile"],
     ]
     story += [table(summary, [58, 116]), Spacer(1, 8 * mm),
@@ -236,7 +241,7 @@ def main():
             ["Solid volume / solid fraction", f"{g['solid_volume_mm3']:,.0f} mm³ / {100 * g['solid_fraction']:.1f} %",
              "Verified (STL)"],
             ["Surface area (internal, both sides)", f"{g['wetted_area_mm2']:,.0f} mm²", "Verified (STL)"],
-            ["PLA mass", f"{v['pla_mass_g']:.1f} g (at 1.24 g/cm³); slicer: {g_off} g incl. brim", "Estimate"]]
+            ["PLA mass", f"{v['pla_mass_g']:.1f} g (at 1.24 g/cm³); slicer: {g_off} g incl. skirt", "Estimate"]]
     story += [Spacer(1, 4), table(rows, [62, 80, 32]), PageBreak(),
               figure(VIEWS / "views_composite.png", 160,
                      "Figure 2 – Front, side, top and isometric views rendered from gyroid_3x3_40mm.stl (orthographic, "
@@ -374,8 +379,9 @@ def main():
             ["Retraction", "0.8 mm @ 35 mm/s, 0.2 mm Z-hop (direct drive)",
              "Bowden: 4–6 mm", "Stringing across openings"],
             ["Travel", "Avoid crossing perimeters ON", "–", "Keeps strings out of the openings"],
-            ["Adhesion", "5 mm outer brim, elephant-foot compensation 0.15 mm", "brim 3–8 mm",
-             "<b>Geometry</b>: compensation keeps bottom openings full size"],
+            ["Adhesion", "<b>No brim</b>; elephant-foot compensation 0.15 mm; clean PEI plate", "glue stick only if corners lift",
+             f"<b>Geometry</b>: an outer brim fills {b5['brim_cover_of_bottom_openings_pct']:.0f} % of the bottom openings "
+             f"(see below); compensation keeps them full size"],
             ["Supports", "<b>OFF</b>", "(build-plate only if required)", "<b>Geometry</b>: supports fill openings"],
             ["XY size compensation", "0", "0", "<b>Geometry</b>: any value changes opening size"],
             ["Orientation", "As exported (z = 0 face on the bed)", "x = 0 or y = 0 face down is equivalent",
@@ -386,6 +392,18 @@ def main():
               P("Saved as <i>print/prusaslicer_PLA_0.4mm_gyroid_3x3.ini</i>. Settings marked <b>Geometry</b> change "
                 "the physical shape or the size of the openings; the others affect only quality or reliability."),
               table(rows, [36, 54, 30, 54]), Spacer(1, 4),
+              P(f"<b>Why no brim (revision 3.1).</b> The bottom face is a set of curved strips whose open areas "
+                f"connect to the outside, so a slicer treats them as exterior and runs an 'outer' brim into them. "
+                f"Sliced in PrusaSlicer with a 5 mm outer brim, {b5['brim_inside_footprint_mm2']:,.0f} mm² of brim "
+                f"lands inside the 40 × 40 mm footprint, covering {b5['brim_cover_of_bottom_openings_pct']:.0f} % of "
+                f"the open bottom area (Bambu Studio 02.08.02.61 with the Bambu H2D/P1S profiles: 84 %). Peeling it "
+                f"out of the openings would risk the thin bottom edges. Without a brim the first layer is still one "
+                f"continuous island of {pr['first_layer']['area_mm2']:.0f} mm², and no brim material is printed "
+                f"inside the footprint ({off['brim_inside_footprint_mm2']:.0f} mm²). Earlier versions of this "
+                f"report recommended a 5 mm brim; that advice is withdrawn."),
+              P("<b>Bambu Lab H2D / P1S.</b> Printer-specific settings, sliced with Bambu Studio and the official "
+                "Bambu profiles, are in <i>Gyroid_3D_Printing_Settings.txt</i>. Use that sheet on Bambu printers; "
+                "the table above is for the generic PrusaSlicer profile."),
               P(f"<b>0.6 mm nozzle alternative.</b> Because the thinnest printed feature is ≈1.3 mm and the openings are "
                 f"≈5 mm, a 0.6 mm nozzle (0.3 mm layers, 0.65 mm lines, 2 perimeters) keeps the geometry: PrusaSlicer "
                 f"estimates {n06['prusaslicer_summary']['estimated printing time (normal mode)']} and "
@@ -468,6 +486,7 @@ def main():
             ["results/3x3/slicer/slicer_report.json (+ *.gcode, not committed)", "JSON / G-code",
              "Slicer results; G-code is for the generic printer only"],
             ["results/3x3/views/*.png", "PNG", "Front, side, top, isometric, annotated openings, sections, layers"],
+            ["Gyroid_3D_Printing_Settings.txt", "Text", "Operator sheet for Bambu Lab H2D / P1S (Bambu Studio, official profiles)"],
             ["Gyroid_Design_and_3D_Printing_Report.pdf", "PDF", "This report"]]
     story += [P("9. Final deliverables", "h1"), table(rows, [70, 26, 78])]
 
@@ -480,16 +499,19 @@ def main():
                         "if it uses a Bowden extruder).",
                         "Make sure supports are <b>OFF</b> (not 'everywhere'); XY size compensation 0.",
                         "Slice and inspect the layer preview: 3–4 lines per wall, openings visible in every layer, "
-                        "no support, a single brim around the first layer.",
+                        "no support, no brim lines inside the 40 × 40 mm footprint.",
                         f"Print in PLA at 210 °C / 60 °C with 100 % fan from layer 2; expect about {t_off} and "
                         f"{g_off} g with a 0.4 mm nozzle (generic printer estimate).",
-                        "After printing, remove the brim, look through each face: 9 openings must be clear on all six faces."]),
+                        "After printing, let the plate cool and flex it to release the part; look through each face: "
+                        "9 openings must be clear on all six faces.",
+                        "On Bambu Lab H2D / P1S printers follow <i>Gyroid_3D_Printing_Settings.txt</i> instead."]),
               P("Pre-print checklist", "h2")]
     checks = [["Done", "Check before printing"],
               ["[  ]", "Slicer reports the model as 40.0 × 40.0 × 40.0 mm, manifold, 1 part"],
               ["[  ]", "Supports OFF; 'support everywhere' not selected"],
               ["[  ]", "Perimeter generator Arachne, line width 0.42–0.45 mm, XY compensation 0"],
-              ["[  ]", "Elephant-foot compensation ≈ 0.15 mm, 5 mm brim"],
+              ["[  ]", "Elephant-foot compensation ≈ 0.15 mm; brim OFF (no brim lines inside the 40 × 40 mm footprint)"],
+              ["[  ]", "Build plate clean (soap and water or IPA); glue stick only if corners lifted before"],
               ["[  ]", "Preview: 9 see-through openings visible on top view, openings open in every layer"],
               ["[  ]", "Cooling 100 % from layer 2; avoid crossing perimeters ON"],
               ["[  ]", "Bed clean and level; first layer continuous"],
