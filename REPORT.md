@@ -3,6 +3,11 @@
 ME3305 Manufacturing Technology II · Task 4: Generative-AI gyroid heat-exchange structure
 **Revision 2 (refined design), 2026-10-25.** It supersedes revision 1 (6.67 mm cell / 0.8 mm wall); see §9.
 
+> **Revision 3 (2026-10-29), printed-prototype redesign:** 3 × 3 × 3 see-through openings, 26.67 mm period,
+> 1.6 mm wall, no side walls, support-free PLA printing. It is documented in
+> `Gyroid_Design_and_3D_Printing_Report.pdf` (STL: `stl/gyroid_3x3_40mm.stl`, source: `src/build_3x3.py`).
+> This report remains the record of the heat-exchanger design study (revisions 1–2).
+
 ## 1. Summary
 
 A parametric sheet-gyroid generator was written in Python. It swept **30 designs** (5 cell sizes × 6 nominal wall thicknesses) in a 40 × 40 × 40 mm cube and filtered them with **measured** printability rules:

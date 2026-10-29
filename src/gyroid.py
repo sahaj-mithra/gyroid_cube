@@ -28,13 +28,19 @@ def _axis(L: float, h: float) -> np.ndarray:
     return (np.arange(-2, n + 3, dtype=np.float32)) * np.float32(L / n)
 
 
-def solid_field(L: float, a: float, w: float, h: float, skin: float = 0.0):
-    """Return (field, spacing, origin). field > 0 inside solid."""
+def solid_field(L: float, a: float, w: float, h: float, skin: float = 0.0, shift: float = 0.0):
+    """Return (field, spacing, origin). field > 0 inside solid.
+
+    shift (mm) translates the lattice by the same amount along x, y and z relative to
+    the cube, i.e. it chooses where the cube faces cut the gyroid (phase). It does not
+    change the geometry of the lattice itself.
+    """
     x = _axis(L, h)
     k = np.float32(2 * np.pi / a)
-    X = (k * x)[:, None, None]
-    Y = (k * x)[None, :, None]
-    Z = (k * x)[None, None, :]
+    xs = x + np.float32(shift)
+    X = (k * xs)[:, None, None]
+    Y = (k * xs)[None, :, None]
+    Z = (k * xs)[None, None, :]
     sX, cX, sY, cY, sZ, cZ = np.sin(X), np.cos(X), np.sin(Y), np.cos(Y), np.sin(Z), np.cos(Z)
 
     g = sX * cY + sY * cZ + sZ * cX
@@ -69,8 +75,8 @@ def solid_field(L: float, a: float, w: float, h: float, skin: float = 0.0):
     return f, spacing, float(x[0])
 
 
-def build_mesh(L, a, w, h, skin=0.0, keep_largest=True):
-    f, sp, origin = solid_field(L, a, w, h, skin)
+def build_mesh(L, a, w, h, skin=0.0, keep_largest=True, shift=0.0):
+    f, sp, origin = solid_field(L, a, w, h, skin, shift)
     verts, faces, _, _ = marching_cubes(f, level=0.0, spacing=(sp, sp, sp))
     del f
     verts += origin

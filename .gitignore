@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Slicer G-code is generated for a generic printer; regenerate with src/slice_check.py
+results/3x3/slicer/*.gcode

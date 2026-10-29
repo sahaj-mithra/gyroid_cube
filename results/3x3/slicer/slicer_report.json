@@ -1,0 +1,305 @@
+{
+  "slicer": "PrusaSlicer-2.9.6 based on Slic3r (with GUI support)",
+  "config": "print\\prusaslicer_PLA_0.4mm_gyroid_3x3.ini",
+  "cases": {
+    "new_supports_off": {
+      "stl": "stl/gyroid_3x3_40mm.stl",
+      "options": [],
+      "gcode": "results\\3x3\\slicer\\new_supports_off.gcode",
+      "prusaslicer_summary": {
+        "filament used [mm]": "4956.52",
+        "filament used [cm3]": "11.92",
+        "filament used [g]": "14.78",
+        "total filament used [g]": "14.78",
+        "total filament used for wipe tower [g]": "0.00",
+        "estimated printing time (normal mode)": "1h 57m 47s",
+        "estimated printing time (silent mode)": "2h 1m 22s"
+      },
+      "extrusion_length_mm_by_type": {
+        "Perimeter": 65918.8,
+        "External perimeter": 62295.9,
+        "Solid infill": 5857.8,
+        "Skirt/Brim": 3648.8,
+        "Overhang perimeter": 770.8,
+        "Top solid infill": 446.7,
+        "Bridge infill": 179.6
+      },
+      "support_extrusion_mm": 0,
+      "support_access": {
+        "regions": 0,
+        "clear_to_bed_mm3": 0.0,
+        "resting_on_model_mm3": 0.0,
+        "resting_on_model_regions": 0
+      },
+      "openings_after_slicing": {
+        "x": {
+          "full": 9,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.82
+        },
+        "y": {
+          "full": 9,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.82
+        },
+        "z": {
+          "full": 9,
+          "edge_cut": 1,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.84
+        }
+      }
+    },
+    "new_supports_buildplate_only": {
+      "stl": "stl/gyroid_3x3_40mm.stl",
+      "options": [
+        "--support-material",
+        "--support-material-buildplate-only"
+      ],
+      "gcode": "results\\3x3\\slicer\\new_supports_buildplate_only.gcode",
+      "prusaslicer_summary": {
+        "filament used [mm]": "5417.57",
+        "filament used [cm3]": "13.03",
+        "filament used [g]": "16.16",
+        "total filament used [g]": "16.16",
+        "total filament used for wipe tower [g]": "0.00",
+        "estimated printing time (normal mode)": "2h 11m 19s",
+        "estimated printing time (silent mode)": "2h 16m 21s"
+      },
+      "extrusion_length_mm_by_type": {
+        "Perimeter": 65918.8,
+        "External perimeter": 62295.9,
+        "Support material": 10768.8,
+        "Solid infill": 5857.8,
+        "Skirt/Brim": 3653.4,
+        "Support material interface": 1862.1,
+        "Overhang perimeter": 770.8,
+        "Top solid infill": 446.7,
+        "Bridge infill": 179.6
+      },
+      "support_extrusion_mm": 12630.9,
+      "support_access": {
+        "regions": 131,
+        "clear_to_bed_mm3": 1143.1,
+        "resting_on_model_mm3": 3.9,
+        "resting_on_model_regions": 8
+      },
+      "openings_after_slicing": {
+        "x": {
+          "full": 9,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.82
+        },
+        "y": {
+          "full": 9,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.82
+        },
+        "z": {
+          "full": 9,
+          "edge_cut": 1,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.84
+        }
+      }
+    },
+    "new_supports_everywhere": {
+      "stl": "stl/gyroid_3x3_40mm.stl",
+      "options": [
+        "--support-material",
+        "--no-support-material-buildplate-only"
+      ],
+      "gcode": "results\\3x3\\slicer\\new_supports_everywhere.gcode",
+      "prusaslicer_summary": {
+        "filament used [mm]": "7936.41",
+        "filament used [cm3]": "19.09",
+        "filament used [g]": "23.67",
+        "total filament used [g]": "23.67",
+        "total filament used for wipe tower [g]": "0.00",
+        "estimated printing time (normal mode)": "3h 6m 50s",
+        "estimated printing time (silent mode)": "3h 17m 25s"
+      },
+      "extrusion_length_mm_by_type": {
+        "Perimeter": 65918.8,
+        "Support material": 65134.3,
+        "External perimeter": 62295.9,
+        "Support material interface": 20091.7,
+        "Solid infill": 5857.8,
+        "Skirt/Brim": 3653.0,
+        "Overhang perimeter": 770.8,
+        "Top solid infill": 446.7,
+        "Bridge infill": 179.6
+      },
+      "support_extrusion_mm": 85226.0,
+      "support_access": {
+        "regions": 83,
+        "clear_to_bed_mm3": 706.6,
+        "resting_on_model_mm3": 6913.2,
+        "resting_on_model_regions": 64
+      },
+      "openings_after_slicing": {
+        "x": {
+          "full": 9,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.82
+        },
+        "y": {
+          "full": 9,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.82
+        },
+        "z": {
+          "full": 9,
+          "edge_cut": 1,
+          "grid_cols_rows": [
+            3,
+            3
+          ],
+          "min_clear_diameter_mm": 4.84
+        }
+      }
+    },
+    "original_supports_everywhere": {
+      "stl": "stl/gyroid_final_test_article.stl",
+      "options": [
+        "--support-material",
+        "--no-support-material-buildplate-only"
+      ],
+      "gcode": "results\\3x3\\slicer\\original_supports_everywhere.gcode",
+      "prusaslicer_summary": {
+        "filament used [mm]": "17764.41",
+        "filament used [cm3]": "42.73",
+        "filament used [g]": "52.98",
+        "total filament used [g]": "52.98",
+        "total filament used for wipe tower [g]": "0.00",
+        "estimated printing time (normal mode)": "10h 36m 47s",
+        "estimated printing time (silent mode)": "11h 18m 48s"
+      },
+      "extrusion_length_mm_by_type": {
+        "External perimeter": 220766.3,
+        "Support material interface": 160037.2,
+        "Perimeter": 69142.3,
+        "Support material": 41022.1,
+        "Skirt/Brim": 1952.2,
+        "Overhang perimeter": 1679.8,
+        "Solid infill": 280.3
+      },
+      "support_extrusion_mm": 201059.3,
+      "support_access": {
+        "regions": 61,
+        "clear_to_bed_mm3": 0.1,
+        "resting_on_model_mm3": 17233.4,
+        "resting_on_model_regions": 60
+      },
+      "openings_after_slicing": {
+        "x": {
+          "full": 0,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            0,
+            0
+          ],
+          "min_clear_diameter_mm": 0.0
+        },
+        "y": {
+          "full": 0,
+          "edge_cut": 2,
+          "grid_cols_rows": [
+            0,
+            0
+          ],
+          "min_clear_diameter_mm": 0.0
+        },
+        "z": {
+          "full": 90,
+          "edge_cut": 1,
+          "grid_cols_rows": [
+            10,
+            9
+          ],
+          "min_clear_diameter_mm": 0.94
+        }
+      }
+    }
+  },
+  "estimate_cases": {
+    "new_supports_off_nozzle0.6": {
+      "stl": "stl/gyroid_3x3_40mm.stl",
+      "options": [
+        "--nozzle-diameter",
+        "0.6",
+        "--layer-height",
+        "0.3",
+        "--first-layer-height",
+        "0.3",
+        "--extrusion-width",
+        "0.65",
+        "--perimeter-extrusion-width",
+        "0.65",
+        "--external-perimeter-extrusion-width",
+        "0.65",
+        "--first-layer-extrusion-width",
+        "0.7",
+        "--infill-extrusion-width",
+        "0.65",
+        "--solid-infill-extrusion-width",
+        "0.65",
+        "--top-infill-extrusion-width",
+        "0.6",
+        "--perimeters",
+        "2",
+        "--filament-max-volumetric-speed",
+        "15"
+      ],
+      "gcode": "results\\3x3\\slicer\\new_supports_off_nozzle0.6.gcode",
+      "prusaslicer_summary": {
+        "filament used [mm]": "5011.61",
+        "filament used [cm3]": "12.05",
+        "filament used [g]": "14.95",
+        "total filament used [g]": "14.95",
+        "total filament used for wipe tower [g]": "0.00",
+        "estimated printing time (normal mode)": "1h 10m 0s",
+        "estimated printing time (silent mode)": "1h 12m 26s"
+      },
+      "extrusion_length_mm_by_type": {
+        "External perimeter": 39611.8,
+        "Perimeter": 19387.7,
+        "Skirt/Brim": 2619.6,
+        "Solid infill": 1938.0,
+        "Top solid infill": 808.7,
+        "Overhang perimeter": 526.3,
+        "Bridge infill": 515.5
+      }
+    }
+  }
+}

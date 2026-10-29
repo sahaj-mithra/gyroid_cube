@@ -16,12 +16,11 @@ import sys
 import warnings
 from pathlib import Path
 
-import numpy as np
 import trimesh
 
 sys.path.insert(0, str(Path(__file__).parent))
 from gyroid import build_mesh, lattice_stats, measure  # noqa: E402
-from mesh_checks import defect_free, defects  # noqa: E402
+from mesh_checks import defect_free, defects, sanitize  # noqa: E402
 from sweep import L, estimates  # noqa: E402
 
 warnings.filterwarnings("ignore", category=RuntimeWarning, module="trimesh")
@@ -40,17 +39,6 @@ jobs = [
     ("gyroid_final_test_article", sel["cell_mm"], sel["wall_mm"], SKIN),
     ("gyroid_reference_a10_w1.0", 10.0, 1.0, 0.0),
 ]
-
-
-def sanitize(m):
-    """Mimic the STL round trip (float32 vertices) and drop the zero-area
-    back-to-back triangle pairs that quadric decimation occasionally leaves."""
-    m = trimesh.Trimesh(vertices=m.vertices.astype(np.float32).astype(np.float64),
-                        faces=m.faces, process=True)
-    # The degenerate pairs share edges with the main surface, so deleting faces
-    # opens holes; splitting by face adjacency isolates them as zero-volume bodies.
-    parts = m.split(only_watertight=False)
-    return max(parts, key=lambda p: len(p.faces)) if len(parts) > 1 else m
 
 
 def acceptable(m, ref=None):

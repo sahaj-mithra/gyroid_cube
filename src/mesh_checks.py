@@ -69,6 +69,17 @@ def self_intersections(m: trimesh.Trimesh, cell=0.5, eps=1e-7) -> int:
     return n_hits
 
 
+def sanitize(m: trimesh.Trimesh) -> trimesh.Trimesh:
+    """Mimic the STL round trip (float32 vertices) and drop the zero-area
+    back-to-back triangle pairs that quadric decimation occasionally leaves."""
+    m = trimesh.Trimesh(vertices=m.vertices.astype(np.float32).astype(np.float64),
+                        faces=m.faces, process=True)
+    # The degenerate pairs share edges with the main surface, so deleting faces
+    # opens holes; splitting by face adjacency isolates them as zero-volume bodies.
+    parts = m.split(only_watertight=False)
+    return max(parts, key=lambda p: len(p.faces)) if len(parts) > 1 else m
+
+
 def defects(m: trimesh.Trimesh) -> dict:
     uses = np.array([len(g) for g in group_rows(m.edges_sorted, require_count=None)])
     return {
@@ -92,9 +103,19 @@ def _slice(T, z):
     lone = np.where(s.sum(1) == 1, np.argmax(s, 1), np.argmax(~s, 1))
     r = np.arange(len(t))
     a, b, c = t[r, lone], t[r, (lone + 1) % 3], t[r, (lone + 2) % 3]
-    p = a + (b - a) * ((z - a[:, 2]) / (b[:, 2] - a[:, 2]))[:, None]
-    q = a + (c - a) * ((z - a[:, 2]) / (c[:, 2] - a[:, 2]))[:, None]
-    return p[:, :2], q[:, :2]
+    return _cross(a, b, z)[:, :2], _cross(a, c, z)[:, :2]
+
+
+def _cross(u, v, z):
+    """Point where edge u-v crosses the plane at height z. Always interpolated from the lower
+    endpoint so the two triangles sharing an edge produce bit-identical points; otherwise
+    rounding can leave scanlines with an odd number of crossings (seen as 1-pixel leaks)."""
+    swap = (u[:, 2] > v[:, 2])[:, None]
+    lo, hi = np.where(swap, v, u), np.where(swap, u, v)
+    return lo + (hi - lo) * ((z - lo[:, 2]) / (hi[:, 2] - lo[:, 2]))[:, None]
+
+
+ODD_ROWS = {"repaired": 0}  # diagnostic counter for scanlines that still had odd crossings
 
 
 def _fill(p, q, O, N, px):
@@ -109,14 +130,20 @@ def _fill(p, q, O, N, px):
     x = x1[r] + (O + (j + 0.5) * px - y1[r]) * (x2[r] - x1[r]) / (y2[r] - y1[r])
     o = np.lexsort((x, j))
     j, x = j[o], x[o]
-    keep = (np.bincount(j, minlength=N)[j] % 2) == 0
+    rc = np.bincount(j, minlength=N)
+    keep = (rc[j] % 2) == 0
     j, x = j[keep], x[keep]
     c0 = np.clip(np.ceil((x[0::2] - O) / px - 0.5).astype(int), 0, N)
     c1 = np.clip(np.ceil((x[1::2] - O) / px - 0.5).astype(int), 0, N)
     d = np.zeros((N, N + 1), np.int32)
     np.add.at(d, (j[0::2], c0), 1)
     np.add.at(d, (j[0::2], c1), -1)
-    return np.cumsum(d, 1)[:, :N] > 0
+    img = np.cumsum(d, 1)[:, :N] > 0
+    # Any row still ambiguous is copied from its neighbour instead of being left empty.
+    for row in np.nonzero(rc[:N] % 2)[0]:
+        img[row] = img[row - 1] if row > 0 else img[row + 1]
+        ODD_ROWS["repaired"] += 1
+    return img
 
 
 def mesh_wall_thickness(m: trimesh.Trimesh, lo: float, hi: float, L=40.0, px=0.05) -> np.ndarray:

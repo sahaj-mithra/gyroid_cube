@@ -1,0 +1,643 @@
+{
+  "parameters": {
+    "L_mm": 40.0,
+    "period_mm": 26.666666666666668,
+    "periods_per_axis": 1.5,
+    "openings_per_axis": 3,
+    "shift_mm": 3.3333333333333335,
+    "wall_nominal_mm": 1.6,
+    "mc_pitch_mm": 0.2,
+    "equation": "sin(X)cos(Y)+sin(Y)cos(Z)+sin(Z)cos(X), X=2*pi*(x+shift)/a; solid |g/|grad g|| <= w/2"
+  },
+  "mesh_build": {
+    "bodies_raw": 1,
+    "removed_fragment_volume_mm3": 0.0
+  },
+  "decimation": {
+    "faces": 400000,
+    "vol_change_pct": -0.0022450365141146733,
+    "area_change_pct": 0.015413910975037304
+  },
+  "geometry": {
+    "solid_volume_mm3": 11626.502837179482,
+    "box_volume_mm3": 64000.0,
+    "solid_fraction": 0.1816641068309294,
+    "porosity": 0.8183358931690706,
+    "surface_area_total_mm2": 16718.48445240812,
+    "wetted_area_mm2": 14668.95749602295,
+    "wall_area_one_side_mm2": 7334.478748011475,
+    "specific_surface_m2_per_m3": 229.20246087535858,
+    "hydraulic_diameter_mm": 14.281450383101875,
+    "mean_wall_thickness_mm": 1.5851846104716931,
+    "wall_thickness_target_mm": 1.6,
+    "pla_mass_g": 14.416863518102558,
+    "overhang_gt45_area_frac": 0.11466675109032384,
+    "overhang_gt70_area_frac": 0.0180274295996067,
+    "bed_contact_area_mm2": 342.317690878181,
+    "triangles": 400000,
+    "watertight": true,
+    "winding_consistent": true,
+    "is_volume": true,
+    "euler_number": -66,
+    "bodies": 1,
+    "defects": {
+      "zero_area_faces": 0,
+      "open_edges": 0,
+      "non_manifold_edges": 0,
+      "self_intersections": 0
+    },
+    "bounds_mm": [
+      [
+        -0.00022678177629131824,
+        -1.0894675142480992e-05,
+        -9.935205889632925e-05
+      ],
+      [
+        40.000099182128906,
+        40.00020980834961,
+        39.99991989135742
+      ]
+    ],
+    "size_mm": [
+      40.0003259639052,
+      40.00022070302475,
+      40.00001924341632
+    ],
+    "file_bytes": 20000084
+  },
+  "pla_mass_g": 14.416863518102558,
+  "see_through": {
+    "x": {
+      "full": 9,
+      "edge_cut": 4,
+      "grid_cols_rows": [
+        3,
+        3
+      ],
+      "min_clear_diameter_mm": 4.84,
+      "open_area_pct": 11.1
+    },
+    "y": {
+      "full": 9,
+      "edge_cut": 4,
+      "grid_cols_rows": [
+        3,
+        3
+      ],
+      "min_clear_diameter_mm": 4.84,
+      "open_area_pct": 11.1
+    },
+    "z": {
+      "full": 9,
+      "edge_cut": 4,
+      "grid_cols_rows": [
+        3,
+        3
+      ],
+      "min_clear_diameter_mm": 4.84,
+      "open_area_pct": 11.1
+    }
+  },
+  "see_through_detail": {
+    "x": [
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          0.08333333333333333,
+          0.08333333333333333
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          39.91666666666667,
+          0.08333333333333333
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          3.3366599292572006,
+          10.001237998989389
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          16.6633400707428,
+          10.001237998989389
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.841487374764082,
+        "area_mm2": 19.75,
+        "centre_mm": [
+          29.999164556962025,
+          9.999063291139242
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.840000000000003,
+        "centre_mm": [
+          3.334122983870968,
+          23.33235887096774
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.830000000000002,
+        "centre_mm": [
+          16.666691880988402,
+          23.3333081190116
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.78,
+        "centre_mm": [
+          29.9994944388271,
+          23.335642062689587
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.840000000000003,
+        "centre_mm": [
+          3.334122983870968,
+          36.667641129032255
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.830000000000002,
+        "centre_mm": [
+          16.666691880988402,
+          36.6666918809884
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.78,
+        "centre_mm": [
+          30.0,
+          36.66365015166835
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          0.08333333333333333,
+          39.91666666666667
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          39.91666666666667,
+          39.91666666666667
+        ]
+      }
+    ],
+    "y": [
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          0.08333333333333333,
+          0.08333333333333333
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          39.91666666666667,
+          0.08333333333333333
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          9.998762001010611,
+          3.3366599292572006
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.820000000000004,
+        "centre_mm": [
+          23.332542885973766,
+          3.330776992936428
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.840000000000003,
+        "centre_mm": [
+          36.665625,
+          3.3339717741935484
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          10.001237998989389,
+          16.6633400707428
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.830000000000002,
+        "centre_mm": [
+          23.3333081190116,
+          16.666691880988402
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.85,
+        "centre_mm": [
+          36.66682619647355,
+          16.66682619647355
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.841487374764082,
+        "area_mm2": 19.760000000000005,
+        "centre_mm": [
+          10.0,
+          30.0
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          23.336659929257202,
+          30.00123799898939
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          36.6633400707428,
+          29.998762001010615
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          0.08333333333333333,
+          39.91666666666667
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          39.91666666666667,
+          39.91666666666667
+        ]
+      }
+    ],
+    "z": [
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          0.08333333333333333,
+          0.08333333333333333
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          39.91666666666667,
+          0.08333333333333333
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.78,
+        "centre_mm": [
+          3.3363498483316487,
+          10.0
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          16.6633400707428,
+          9.998762001010611
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.841487374764082,
+        "area_mm2": 19.760000000000005,
+        "centre_mm": [
+          30.0,
+          10.0
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.820000000000004,
+        "centre_mm": [
+          3.3352169525731585,
+          23.33133198789102
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.830000000000002,
+        "centre_mm": [
+          16.666691880988402,
+          23.3333081190116
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          29.998762001010615,
+          23.336659929257202
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.830000000000002,
+        "centre_mm": [
+          3.333812405446294,
+          36.66689359556228
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.9396356140913875,
+        "area_mm2": 19.840000000000003,
+        "centre_mm": [
+          16.66804435483871,
+          36.667187500000004
+        ]
+      },
+      {
+        "edge_cut": false,
+        "clear_diameter_mm": 4.882622246293481,
+        "area_mm2": 19.790000000000003,
+        "centre_mm": [
+          30.00123799898939,
+          36.6633400707428
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          0.08333333333333333,
+          39.91666666666667
+        ]
+      },
+      {
+        "edge_cut": true,
+        "clear_diameter_mm": 0.28284271247461906,
+        "area_mm2": 0.030000000000000006,
+        "centre_mm": [
+          39.91666666666667,
+          39.91666666666667
+        ]
+      }
+    ]
+  },
+  "voxelizer_rows_repaired": 9,
+  "face_mouths": {
+    "x0": {
+      "void_regions": 1,
+      "open_fraction": 0.77619375,
+      "largest_inscribed_diameter_mm": 13.440238093129153,
+      "solid_fraction_on_face": 0.22380625,
+      "solid_islands_on_face": 1,
+      "region_areas_mm2": [
+        1241.91
+      ]
+    },
+    "x1": {
+      "void_regions": 1,
+      "open_fraction": 0.77616875,
+      "largest_inscribed_diameter_mm": 13.440238093129153,
+      "solid_fraction_on_face": 0.22383125,
+      "solid_islands_on_face": 1,
+      "region_areas_mm2": [
+        1241.8700000000001
+      ]
+    },
+    "y0": {
+      "void_regions": 1,
+      "open_fraction": 0.77618125,
+      "largest_inscribed_diameter_mm": 13.440238093129153,
+      "solid_fraction_on_face": 0.22381875,
+      "solid_islands_on_face": 1,
+      "region_areas_mm2": [
+        1241.8900000000003
+      ]
+    },
+    "y1": {
+      "void_regions": 1,
+      "open_fraction": 0.77618125,
+      "largest_inscribed_diameter_mm": 13.440238093129153,
+      "solid_fraction_on_face": 0.22381875,
+      "solid_islands_on_face": 1,
+      "region_areas_mm2": [
+        1241.8900000000003
+      ]
+    },
+    "z0": {
+      "void_regions": 1,
+      "open_fraction": 0.77599375,
+      "largest_inscribed_diameter_mm": 13.440238093129153,
+      "solid_fraction_on_face": 0.22400625,
+      "solid_islands_on_face": 1,
+      "region_areas_mm2": [
+        1241.5900000000001
+      ]
+    },
+    "z1": {
+      "void_regions": 1,
+      "open_fraction": 0.776,
+      "largest_inscribed_diameter_mm": 13.440238093129153,
+      "solid_fraction_on_face": 0.224,
+      "solid_islands_on_face": 1,
+      "region_areas_mm2": [
+        1241.6000000000001
+      ]
+    }
+  },
+  "wall_thickness_on_mesh": {
+    "min": 0.2,
+    "p1": 1.5620499351813308,
+    "p5": 1.5620499351813308,
+    "median": 1.6124515496597098,
+    "max": 1.697056274847714,
+    "excluded_band_mm": 1.0,
+    "voxel_mm": 0.1
+  },
+  "face_strip_widths": {
+    "p1": 0.4,
+    "p5": 1.0,
+    "median": 1.7204650534085255,
+    "share_below_0.4mm": 0.003905467654716603,
+    "share_below_0.8mm": 0.033947526537152016
+  },
+  "bottleneck_on_mesh_mm": {
+    "x": 9.9,
+    "y": 9.9,
+    "z": 9.9
+  },
+  "lattice_field": {
+    "wall_min_mm": 1.5549205052920803,
+    "wall_p1_mm": 1.5549205052920803,
+    "wall_p5_mm": 1.5549205052920803,
+    "wall_median_mm": 1.6,
+    "wall_max_mm": 1.7074997966487595,
+    "bottleneck_mm": 10.003274543383524,
+    "stats_voxel_mm": 0.13333333333333333
+  },
+  "printability": {
+    "layers": 200,
+    "layer_mm": 0.2,
+    "pixel_mm": 0.025,
+    "layer_area_mm2": [
+      247.003125,
+      395.97
+    ],
+    "wall_width_interior_mm": {
+      "p1": 1.3,
+      "p5": 1.55,
+      "median": 1.8034688796871432,
+      "p95": 3.076117683054405
+    },
+    "wall_width_interior_share_below": {
+      "0.4": 0.0,
+      "0.8": 0.0,
+      "1.2": 0.0010470319324128521,
+      "1.6": 0.18899441651672264
+    },
+    "wall_width_near_faces_share_below": {
+      "0.4": 0.10151283609900753,
+      "0.6": 0.27866179620171905,
+      "0.8": 0.5161253671311787
+    },
+    "islands_per_layer": {
+      "median": 5,
+      "max": 7
+    },
+    "first_layer": {
+      "islands": 1,
+      "area_mm2": 371.78312500000004,
+      "island_areas_mm2": [
+        371.78312500000004
+      ]
+    },
+    "floating_islands": {
+      "total": 3,
+      "events": [
+        {
+          "z": 1.3,
+          "count": 1,
+          "max_area_mm2": 0.05562500000000001
+        },
+        {
+          "z": 23.5,
+          "count": 1,
+          "max_area_mm2": 0.061250000000000006
+        },
+        {
+          "z": 27.9,
+          "count": 1,
+          "max_area_mm2": 0.0012500000000000002
+        }
+      ]
+    },
+    "overhang": {
+      "max_reach_per_layer_mm": 8.715826122634619,
+      "layers_with_reach_gt_0.4mm": 68,
+      "steep_area_total_mm2": 152.194375,
+      "steep_area_max_per_layer_mm2": 17.22875,
+      "worst_regions": [
+        {
+          "z": 23.5,
+          "largest_area_mm2": 0.061250000000000006,
+          "max_reach_mm": 8.715826122634619
+        },
+        {
+          "z": 5.9,
+          "largest_area_mm2": 3.0775000000000006,
+          "max_reach_mm": 1.2432316759156357
+        },
+        {
+          "z": 25.9,
+          "largest_area_mm2": 3.0768750000000002,
+          "max_reach_mm": 1.2432316759156357
+        },
+        {
+          "z": 1.3,
+          "largest_area_mm2": 0.08750000000000001,
+          "max_reach_mm": 1.2000000000000002
+        },
+        {
+          "z": 21.3,
+          "largest_area_mm2": 0.10062500000000002,
+          "max_reach_mm": 1.175
+        }
+      ]
+    }
+  }
+}

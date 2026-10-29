@@ -1,0 +1,310 @@
+[
+  {
+    "case": "original (printed) a=8, w=0.9, shift 0",
+    "period_mm": 8.0,
+    "periods_per_axis": 5.0,
+    "wall_nominal_mm": 0.9,
+    "shift_mm": 0.0,
+    "openings": {
+      "x": {
+        "full": 90,
+        "edge_cut": 20,
+        "grid_cols_rows": [
+          10,
+          9
+        ],
+        "min_clear_diameter_mm": 1.0,
+        "open_area_pct": 6.0
+      },
+      "y": {
+        "full": 90,
+        "edge_cut": 20,
+        "grid_cols_rows": [
+          9,
+          10
+        ],
+        "min_clear_diameter_mm": 1.0,
+        "open_area_pct": 6.0
+      },
+      "z": {
+        "full": 90,
+        "edge_cut": 20,
+        "grid_cols_rows": [
+          10,
+          9
+        ],
+        "min_clear_diameter_mm": 1.0,
+        "open_area_pct": 6.0
+      }
+    },
+    "wall_p1_mm": 0.85,
+    "wall_median_mm": 0.865,
+    "bottleneck_mm": 2.58,
+    "solid_fraction_est": 0.327,
+    "mass_g_est": 25.9
+  },
+  {
+    "case": "naive 3 periods a=13.33, w=1.6, shift a/8",
+    "period_mm": 13.333,
+    "periods_per_axis": 3.0,
+    "wall_nominal_mm": 1.6,
+    "shift_mm": 1.667,
+    "openings": {
+      "x": {
+        "full": 36,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          6,
+          6
+        ],
+        "min_clear_diameter_mm": 1.7,
+        "open_area_pct": 5.6
+      },
+      "y": {
+        "full": 36,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          6,
+          6
+        ],
+        "min_clear_diameter_mm": 1.7,
+        "open_area_pct": 5.6
+      },
+      "z": {
+        "full": 36,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          6,
+          6
+        ],
+        "min_clear_diameter_mm": 1.7,
+        "open_area_pct": 5.6
+      }
+    },
+    "wall_p1_mm": 1.508,
+    "wall_median_mm": 1.538,
+    "bottleneck_mm": 4.23,
+    "solid_fraction_est": 0.346,
+    "mass_g_est": 27.5
+  },
+  {
+    "case": "3 openings a=26.67, w=0.9, shift a/8",
+    "period_mm": 26.667,
+    "periods_per_axis": 1.5,
+    "wall_nominal_mm": 0.9,
+    "shift_mm": 3.333,
+    "openings": {
+      "x": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 5.52,
+        "open_area_pct": 14.4
+      },
+      "y": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 5.52,
+        "open_area_pct": 14.4
+      },
+      "z": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 5.52,
+        "open_area_pct": 14.4
+      }
+    },
+    "wall_p1_mm": 0.8,
+    "wall_median_mm": 0.924,
+    "bottleneck_mm": 10.62,
+    "solid_fraction_est": 0.104,
+    "mass_g_est": 8.2
+  },
+  {
+    "case": "3 openings a=26.67, w=1.2, shift a/8",
+    "period_mm": 26.667,
+    "periods_per_axis": 1.5,
+    "wall_nominal_mm": 1.2,
+    "shift_mm": 3.333,
+    "openings": {
+      "x": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 5.23,
+        "open_area_pct": 12.9
+      },
+      "y": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 5.23,
+        "open_area_pct": 12.9
+      },
+      "z": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 5.23,
+        "open_area_pct": 12.9
+      }
+    },
+    "wall_p1_mm": 1.131,
+    "wall_median_mm": 1.222,
+    "bottleneck_mm": 10.32,
+    "solid_fraction_est": 0.138,
+    "mass_g_est": 10.9
+  },
+  {
+    "case": "3 openings a=26.67, w=1.6, shift a/8 [selected]",
+    "period_mm": 26.667,
+    "periods_per_axis": 1.5,
+    "wall_nominal_mm": 1.6,
+    "shift_mm": 3.333,
+    "openings": {
+      "x": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 4.84,
+        "open_area_pct": 11.1
+      },
+      "y": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 4.84,
+        "open_area_pct": 11.1
+      },
+      "z": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 4.84,
+        "open_area_pct": 11.1
+      }
+    },
+    "wall_p1_mm": 1.555,
+    "wall_median_mm": 1.6,
+    "bottleneck_mm": 10.0,
+    "solid_fraction_est": 0.182,
+    "mass_g_est": 14.5
+  },
+  {
+    "case": "3 openings a=26.67, w=2.0, shift a/8",
+    "period_mm": 26.667,
+    "periods_per_axis": 1.5,
+    "wall_nominal_mm": 2.0,
+    "shift_mm": 3.333,
+    "openings": {
+      "x": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 4.49,
+        "open_area_pct": 9.5
+      },
+      "y": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 4.49,
+        "open_area_pct": 9.5
+      },
+      "z": {
+        "full": 9,
+        "edge_cut": 0,
+        "grid_cols_rows": [
+          3,
+          3
+        ],
+        "min_clear_diameter_mm": 4.49,
+        "open_area_pct": 9.5
+      }
+    },
+    "wall_p1_mm": 1.867,
+    "wall_median_mm": 2.013,
+    "bottleneck_mm": 9.54,
+    "solid_fraction_est": 0.225,
+    "mass_g_est": 17.9
+  },
+  {
+    "case": "3 openings a=26.67, w=1.6, shift 0 (wrong phase)",
+    "period_mm": 26.667,
+    "periods_per_axis": 1.5,
+    "wall_nominal_mm": 1.6,
+    "shift_mm": 0.0,
+    "openings": {
+      "x": {
+        "full": 6,
+        "edge_cut": 6,
+        "grid_cols_rows": [
+          3,
+          2
+        ],
+        "min_clear_diameter_mm": 4.88,
+        "open_area_pct": 11.1
+      },
+      "y": {
+        "full": 6,
+        "edge_cut": 6,
+        "grid_cols_rows": [
+          2,
+          3
+        ],
+        "min_clear_diameter_mm": 4.88,
+        "open_area_pct": 11.1
+      },
+      "z": {
+        "full": 6,
+        "edge_cut": 6,
+        "grid_cols_rows": [
+          3,
+          2
+        ],
+        "min_clear_diameter_mm": 4.88,
+        "open_area_pct": 11.1
+      }
+    },
+    "wall_p1_mm": 1.555,
+    "wall_median_mm": 1.6,
+    "bottleneck_mm": 10.0,
+    "solid_fraction_est": 0.182,
+    "mass_g_est": 14.5
+  }
+]
